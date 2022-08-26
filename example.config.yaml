@@ -1,0 +1,11 @@
+hooks:
+  pink-bot:
+    secret_env: PINK_BOT_ACTION_WEBHOOK_SECRET
+    conditions:
+      - /action == completed
+      - /check_suite/conclusion == success
+      - /repository/full_name ~= fogapod/pink
+    commands:
+      - docker pull fogapod/pink
+      - docker stop pink-bot
+      - docker run --name pink-bot --rm -v /home/eugene/pink/settings.toml:/code/settings.toml --hostname pink_prod --network host -d fogapod/pink
