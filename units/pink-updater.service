@@ -1,0 +1,13 @@
+[Unit]
+Description=Webhook listener with configurable actions
+Wants=network.target
+After=network-online.target
+
+[Service]
+Restart=on-failure
+WorkingDirectory=/home/eugene/pink-updater
+ExecStart=/home/eugene/.cargo/bin/cargo run --release
+Type=forking
+
+[Install]
+WantedBy=multi-user.target default.target
