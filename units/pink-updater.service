@@ -7,7 +7,7 @@ After=network-online.target
 Restart=on-failure
 WorkingDirectory=/home/eugene/pink-updater
 ExecStart=/home/eugene/.cargo/bin/cargo run --release
-Type=forking
+Type=simple
 
 [Install]
 WantedBy=multi-user.target default.target
