@@ -99,7 +99,7 @@ async fn run_checks(json: Value) -> Result<(), String> {
     // TODO: define these in toml config
     for command_str in  [
         "docker pull fogapod/pink",
-        "docker stop pink-bot",
+        "docker stop pink-bot | true",
         "docker run --name pink-bot --rm -v /home/eugene/pink/settings.toml:/code/settings.toml --hostname pink_prod --network host -d fogapod/pink",
     ] {
         tracing::info!("running {command_str}");
