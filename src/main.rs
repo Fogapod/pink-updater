@@ -22,7 +22,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let app = Router::new().route("/wh/github/pink-bot", post(pink_bot_webhook));
     let addr = SocketAddr::from(([127, 0, 0, 1], 32030));
 
-    tracing::info!("listening on {addr}");
+    tracing::info!("listening on http://{addr}");
 
     axum::Server::bind(&addr)
         .serve(app.into_make_service())

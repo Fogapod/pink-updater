@@ -6,19 +6,19 @@ license = "GNU All-permissive"
 
 [dependencies]
 # web framework
-axum = { version = "0.5.13", default_features = false, features = ["http1", "json", "headers"] }
+axum = { version = "0.6", default_features = false, features = ["http1", "json", "tokio"] }
 hyper = "0.14"
 # configuration
-dotenvy = "0.15.1"
+dotenvy = "0.15.6"
 # runtime
-tokio = { version = "1.20", default_features = false, features = ["rt-multi-thread", "macros", "process"] }
+tokio = { version = "1.23", default_features = false, features = ["rt-multi-thread", "macros", "process"] }
 # logging
 tracing = { version = "0.1", features = ["max_level_debug", "release_max_level_info"] }
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 # json
 serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0.68"
+serde_json = "1.0"
 # webhook signature validation
 hmac = "0.12.1"
-sha2 = "0.10.2"
+sha2 = "0.10.6"
 hex = "0.4.3"
